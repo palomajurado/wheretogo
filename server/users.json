@@ -6,6 +6,20 @@
       "email": "srdelarosab@gmail.com",
       "password": "cmVuYXRvMjExMw==",
       "id": 1
+    },
+    {
+      "firstName": "Yenifer Paloma ",
+      "lastName": "Sota Jurado",
+      "email": "ysotajur@everis.com",
+      "password": "MTIzNDU2",
+      "id": 4
+    },
+    {
+      "firstName": "Capacitor",
+      "lastName": "Ionic",
+      "email": "test@test.com",
+      "password": "MTIzNDU2",
+      "id": 5
     }
   ]
 }

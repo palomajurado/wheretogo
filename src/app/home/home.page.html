@@ -6,70 +6,58 @@
     <ion-title>Principal</ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content class="ion-padding">
+  <ion-row>
+    <ion-col size-md="4" offset-md="4">
+      <ion-buttons>
+        <ion-item>
+          <ion-label position="floating">Busca una ciudad</ion-label>
+          <ion-input #searchText style="text-transform: capitalize"></ion-input>
+        </ion-item>
+        <ion-button color="primary" slot="end" (click)="search(searchText)" fill="outline" class="searchBtn">Search
+        </ion-button>
+      </ion-buttons>
+    </ion-col>
+
+  </ion-row>
   <div *ngIf="placesFound">
-    <ion-card
-      *ngFor="let place of placesFound"
-      (click)="showDetailPlace(place)"
-    >
-      <img src="assets/images/banner-places.jpg" alt="" />
-      <ion-card-header>
-        <ion-card-subtitle>
-          {{cityFound.name.toUpperCase()}}
-        </ion-card-subtitle>
-        <ion-card-title> {{place.name}} </ion-card-title>
-      </ion-card-header>
-      <ion-card-content> Rating: {{place.rate}} </ion-card-content>
-    </ion-card>
+    <ion-row>
+      <ion-col size-md="4" *ngFor="let place of placesFound">
+        <ion-card (click)="showDetailPlace(place)">
+          <img src="assets/images/banner-places.jpg" />
+          <ion-card-header>
+            <ion-card-subtitle>
+              {{cityFound.name.toUpperCase()}}
+            </ion-card-subtitle>
+            <ion-card-title> {{place.name}} </ion-card-title>
+          </ion-card-header>
+          <ion-card-content> Rating: {{place.rate}} </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
   </div>
+
   <div *ngIf="!placesFound">
-    <ion-card>
-      <div class="img-banner-skeleton">
-        <ion-skeleton-text animated></ion-skeleton-text>
-      </div>
-      <ion-card-header>
-        <ion-card-subtitle>
-          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
-        </ion-card-subtitle>
-        <ion-card-title>
-          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
-        </ion-card-title>
-        <ion-card-content>
-          <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
-        </ion-card-content>
-      </ion-card-header>
-    </ion-card>
-    <ion-card>
-      <div class="img-banner-skeleton">
-        <ion-skeleton-text animated></ion-skeleton-text>
-      </div>
-      <ion-card-header>
-        <ion-card-subtitle>
-          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
-        </ion-card-subtitle>
-        <ion-card-title>
-          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
-        </ion-card-title>
-        <ion-card-content>
-          <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
-        </ion-card-content>
-      </ion-card-header>
-    </ion-card>
-    <ion-card>
-      <div class="img-banner-skeleton">
-        <ion-skeleton-text animated></ion-skeleton-text>
-      </div>
-      <ion-card-header>
-        <ion-card-subtitle>
-          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
-        </ion-card-subtitle>
-        <ion-card-title>
-          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
-        </ion-card-title>
-        <ion-card-content>
-          <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
-        </ion-card-content>
-      </ion-card-header>
-    </ion-card>
+    <ion-row>
+      <ion-col *ngFor="let place of [].constructor(countPlacesFound); " size-md="4">
+        <ion-card>
+          <div class="img-banner-skeleton">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </div>
+          <ion-card-header>
+            <ion-card-subtitle>
+              <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+            </ion-card-subtitle>
+            <ion-card-title>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            </ion-card-title>
+            <ion-card-content>
+              <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+            </ion-card-content>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
   </div>
 </ion-content>

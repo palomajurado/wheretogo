@@ -12,6 +12,6 @@
     <img [src]="urlAvatarDefaultImage" *ngIf="!photo" />
     <img [src]="photo" *ngIf="photo" />
   </ion-avatar>
-  <h1>Renato De la Rosa</h1>
-  <h2>srdelarosab@gmail.com</h2>
+  <h1>{{userData.firstName}} {{userData.lastName}}</h1>
+  <h2>{{userData.email}}</h2>
 </ion-content>

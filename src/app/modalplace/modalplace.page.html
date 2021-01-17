@@ -6,14 +6,20 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <div *ngIf="place">
-    <ion-card>
-      <img src="{{place.preview.source}}" alt="" />
-    </ion-card>
-    <ion-card-header>
-      <ion-card-subtitle> {{place.address.city}} </ion-card-subtitle>
-      <ion-card-title> {{place.name}} </ion-card-title>
-    </ion-card-header>
-    <ion-card-content> {{place.wikipedia_extracts.text}} </ion-card-content>
-  </div>
+  <ion-row>
+    <ion-col size-md="4" offset-md="4">
+      <div *ngIf="place">
+        <ion-card>
+          <img src="{{place.preview.source}}" alt="" />
+        </ion-card>
+        <ion-card-header>
+          <ion-card-subtitle> {{place.address.city}} </ion-card-subtitle>
+          <ion-card-title> {{place.name}} </ion-card-title>
+        </ion-card-header>
+        <ion-card-content> {{place.wikipedia_extracts.text}} </ion-card-content>
+      </div>
+    </ion-col>
+  </ion-row>
+
+
 </ion-content>
